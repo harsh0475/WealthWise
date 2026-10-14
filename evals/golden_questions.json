@@ -1,0 +1,237 @@
+[
+  {
+    "id": "GQ-01",
+    "question": "What was my total spending for the entire year 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "total_spend",
+    "params": {"start_date": "2024-01-01", "end_date": "2024-12-31"}
+  },
+  {
+    "id": "GQ-02",
+    "question": "How much total income did I receive in 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "total_income",
+    "params": {}
+  },
+  {
+    "id": "GQ-03",
+    "question": "What were my net savings across 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "net_savings",
+    "params": {}
+  },
+  {
+    "id": "GQ-04",
+    "question": "How much did I spend in January 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "monthly_spend",
+    "params": {"month": "2024-01"}
+  },
+  {
+    "id": "GQ-05",
+    "question": "How much did I spend in February 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "monthly_spend",
+    "params": {"month": "2024-02"}
+  },
+  {
+    "id": "GQ-06",
+    "question": "How much did I spend in March 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "monthly_spend",
+    "params": {"month": "2024-03"}
+  },
+  {
+    "id": "GQ-07",
+    "question": "What was my total spending in October 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "monthly_spend",
+    "params": {"month": "2024-10"}
+  },
+  {
+    "id": "GQ-08",
+    "question": "How much did I spend in December 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "monthly_spend",
+    "params": {"month": "2024-12"}
+  },
+  {
+    "id": "GQ-09",
+    "question": "What is the total amount spent on Food & Dining across the entire year?",
+    "expected_tools": ["get_spending_summary", "get_monthly_trend"],
+    "query_type": "category_spend",
+    "params": {"category": "Food & Dining"}
+  },
+  {
+    "id": "GQ-10",
+    "question": "How much did I spend on Groceries in 2024?",
+    "expected_tools": ["get_spending_summary", "get_monthly_trend"],
+    "query_type": "category_spend",
+    "params": {"category": "Groceries"}
+  },
+  {
+    "id": "GQ-11",
+    "question": "What was my total House Rent expense for the whole year?",
+    "expected_tools": ["get_spending_summary", "detect_recurring_payments"],
+    "query_type": "category_spend",
+    "params": {"category": "Housing & Rent"}
+  },
+  {
+    "id": "GQ-12",
+    "question": "How much did I pay in EMI & Loans over 2024?",
+    "expected_tools": ["get_spending_summary", "detect_recurring_payments"],
+    "query_type": "category_spend",
+    "params": {"category": "EMI & Loans"}
+  },
+  {
+    "id": "GQ-13",
+    "question": "How much did I spend on Utilities like electricity and broadband?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "category_spend",
+    "params": {"category": "Utilities"}
+  },
+  {
+    "id": "GQ-14",
+    "question": "What was my total spending on Subscriptions (Netflix, Spotify)?",
+    "expected_tools": ["get_spending_summary", "detect_recurring_payments"],
+    "query_type": "category_spend",
+    "params": {"category": "Subscriptions"}
+  },
+  {
+    "id": "GQ-15",
+    "question": "How much did I spend on Travel & Commute (Uber, Metro)?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "category_spend",
+    "params": {"category": "Travel & Commute"}
+  },
+  {
+    "id": "GQ-16",
+    "question": "What was my total Shopping spend in 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "category_spend",
+    "params": {"category": "Shopping"}
+  },
+  {
+    "id": "GQ-17",
+    "question": "Who is my #1 top merchant by spending in 2024?",
+    "expected_tools": ["get_top_merchants"],
+    "query_type": "top_merchant_amount",
+    "params": {"rank": 1}
+  },
+  {
+    "id": "GQ-18",
+    "question": "Who are my top 3 merchants by spend?",
+    "expected_tools": ["get_top_merchants"],
+    "query_type": "top_merchants_count",
+    "params": {"n": 3}
+  },
+  {
+    "id": "GQ-19",
+    "question": "What is my average monthly spending across 2024?",
+    "expected_tools": ["get_monthly_trend", "get_spending_summary"],
+    "query_type": "average_monthly_spend",
+    "params": {}
+  },
+  {
+    "id": "GQ-20",
+    "question": "What are my recurring monthly payments and what is the total monthly recurring commitment?",
+    "expected_tools": ["detect_recurring_payments"],
+    "query_type": "recurring_monthly_total",
+    "params": {}
+  },
+  {
+    "id": "GQ-21",
+    "question": "How many recurring payments or subscriptions do I have?",
+    "expected_tools": ["detect_recurring_payments"],
+    "query_type": "recurring_count",
+    "params": {}
+  },
+  {
+    "id": "GQ-22",
+    "question": "What is my largest recurring monthly payment?",
+    "expected_tools": ["detect_recurring_payments"],
+    "query_type": "max_recurring_amount",
+    "params": {}
+  },
+  {
+    "id": "GQ-23",
+    "question": "Did I have any unusual transactions or anomalies in my statement?",
+    "expected_tools": ["detect_anomalies"],
+    "query_type": "anomaly_count",
+    "params": {}
+  },
+  {
+    "id": "GQ-24",
+    "question": "What was the single largest purchase flagged as an anomaly?",
+    "expected_tools": ["detect_anomalies"],
+    "query_type": "largest_anomaly_amount",
+    "params": {}
+  },
+  {
+    "id": "GQ-25",
+    "question": "Were there any duplicate charges in my account?",
+    "expected_tools": ["detect_anomalies"],
+    "query_type": "duplicate_charge_amount",
+    "params": {}
+  },
+  {
+    "id": "GQ-26",
+    "question": "If I reduce my Food & Dining expenses by 20%, how much will I save each month?",
+    "expected_tools": ["simulate_budget"],
+    "query_type": "budget_monthly_savings",
+    "params": {"category": "Food & Dining", "reduction_percent": 20.0}
+  },
+  {
+    "id": "GQ-27",
+    "question": "How much will I save annually if I cut Food & Dining spending by 20%?",
+    "expected_tools": ["simulate_budget"],
+    "query_type": "budget_annual_savings",
+    "params": {"category": "Food & Dining", "reduction_percent": 20.0}
+  },
+  {
+    "id": "GQ-28",
+    "question": "If I cut Groceries by 10%, what will my projected yearly savings be?",
+    "expected_tools": ["simulate_budget"],
+    "query_type": "budget_annual_savings",
+    "params": {"category": "Groceries", "reduction_percent": 10.0}
+  },
+  {
+    "id": "GQ-29",
+    "question": "Compare my spending in Q1 (Jan-Mar 2024) to Q2 (Apr-Jun 2024).",
+    "expected_tools": ["compare_periods"],
+    "query_type": "period_comparison_diff",
+    "params": {
+      "period_a_start": "2024-01-01",
+      "period_a_end": "2024-03-31",
+      "period_b_start": "2024-04-01",
+      "period_b_end": "2024-06-30"
+    }
+  },
+  {
+    "id": "GQ-30",
+    "question": "Compare my spending in the first half of 2024 (Jan to Jun) with the second half (Jul to Dec).",
+    "expected_tools": ["compare_periods"],
+    "query_type": "period_comparison_diff",
+    "params": {
+      "period_a_start": "2024-01-01",
+      "period_a_end": "2024-06-30",
+      "period_b_start": "2024-07-01",
+      "period_b_end": "2024-12-31"
+    }
+  },
+  {
+    "id": "GQ-31",
+    "question": "What was my spending on Investments and mutual fund SIPs in 2024?",
+    "expected_tools": ["get_spending_summary"],
+    "query_type": "category_spend",
+    "params": {"category": "Investments"}
+  },
+  {
+    "id": "GQ-32",
+    "question": "What is the monthly amount I pay for my HDFC personal loan EMI?",
+    "expected_tools": ["detect_recurring_payments", "get_spending_summary"],
+    "query_type": "emi_recurring_amount",
+    "params": {}
+  }
+]
+
